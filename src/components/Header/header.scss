@@ -1,0 +1,44 @@
+.header {
+   background: url("../../assets/images/bg.png") center center/cover no-repeat;
+   height: 100vh;
+   padding-top: 24px;
+   &__body {
+      margin-top: 200px;
+   }
+   &__title {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 46px;
+      line-height: 54px;
+      text-align: center;
+      color: #FFFFFF;
+      opacity: 0.85;
+   }
+   &__bottom {
+      width: 120px;
+      height: 1px;
+      left: 660px;
+      top: 467px;
+      background: #FFFFFF;
+      margin: 20px auto 0 auto;
+   }
+   &__link a{
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-decoration: none;
+   }
+   &__link {
+      width: max-content;
+      margin: 20px auto 0 auto;
+      img {
+         margin: 0 0 1px 7px;
+      }
+   }
+}

@@ -1,0 +1,35 @@
+.footer {
+    padding-bottom: 74px;
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+    }
+    &__title {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+      color: #252525;
+      margin-bottom: 20px;
+    }
+    &__list {
+      width: 250px;
+      li {
+         margin-bottom: 10px;
+         a {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 200;
+            font-size: 16px;
+            line-height: 19px;
+            text-decoration: none;
+            color: #252525;
+         }
+      }
+    }
+}
+.contacts img{
+   margin-right: 13.17px;
+}

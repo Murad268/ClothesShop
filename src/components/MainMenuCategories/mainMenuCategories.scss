@@ -1,0 +1,43 @@
+.mainMenuCategories {
+   position: relative;
+   width: 100%;
+   padding: 100px 0;
+   &__title {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 42px;
+      color: #252525;
+      margin-bottom: 50px;
+   }
+   .container {
+      overflow: hidden;
+   }
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      width: max-content;
+      transition: all 0.3s;
+      
+   }
+}
+
+.nextSlider {
+   width: 40px;
+   height: 40px;
+   background: #E0BEA2;
+   position: absolute;
+   bottom: 50%;
+   transform: translateY(50px);
+   right: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      cursor: pointer;
+   }
+}
