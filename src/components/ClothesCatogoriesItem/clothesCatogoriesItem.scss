@@ -1,0 +1,59 @@
+.clothesCatogoriesItem {
+   height: 360px;
+   position: relative;
+   &__colors {
+      display: flex;
+      width: max-content;
+      margin: 0 auto 5px auto;
+   }
+   &__color {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      margin-right: 5px;
+   }
+   &__footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: rgba(37, 37, 37, 0.8);
+      padding: 5px;
+   }
+   &__name {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: white;
+      margin-bottom: 5px;
+   }
+   &__price {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: white;
+      margin-bottom: 5px;
+   }
+   &__sizes {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: white;
+      margin-bottom: 5px;
+      width: max-content;
+      margin: 0 auto 5px auto;
+  
+   }
+   .sizesNmae {
+      margin-right: 5px;
+   }
+}

@@ -2,8 +2,8 @@ import axios from "axios";
 const API_URL = " http://localhost:3004"
 axios.defaults.baseURL = API_URL
 export const ClothesService =  {
-   async getAllData () {
-      return axios.get("/all")
+   async getAllData (dataName) {
+      return axios.get("/" + dataName)
    }
 }
 

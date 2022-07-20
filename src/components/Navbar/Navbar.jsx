@@ -10,7 +10,7 @@ import basket from '../../assets/icons/basket.png'
 const Navbar = () => {
    const [links, setLinks] = useState([
       {id: 1, name: "NEW", url: ""},
-      {id: 2, name: "КАТАЛОГ", url: ""},
+      {id: 2, name: "КАТАЛОГ", url: "categories"},
       {id: 3, name: "О НАС", url: ""}
    ])
    return (

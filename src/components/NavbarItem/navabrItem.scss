@@ -1,8 +1,12 @@
 .navbar__item {
-   font-family: 'Raleway';
-   font-style: normal;
-   font-weight: 300;
-   font-size: 18px;
-   line-height: 21px;
-   color: #FFFFFF;
+  
+   &__link {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      color: #FFFFFF;
+      text-decoration: none;
+   }
 }
