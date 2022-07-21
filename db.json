@@ -103,11 +103,11 @@
          "name": "Детская шуба из эко-меха",
          "url": "https://exterium.com.ua/wa-data/public/shop/products/04/webp/49/99/9949/images/36711/36711.970.webp",
          "images": [
-            {"id": 1, "url": "https://exterium.com.ua/wa-data/public/shop/products/04/webp/49/99/9949/images/36711/36711.970.webp"},
-            {"id": 2, "url": "https://image-thumbs.shafastatic.net/364038396_310_430"},
-            {"id": 3, "url": "https://image-thumbs.shafastatic.net/393262882_310_430"},
-            {"id": 4, "url": "https://rebbeka.ru/content/catalog/thumb_big_0777jpg_1621331710.jpg"},
-            {"id": 5, "url": "https://rebbeka.ru/content/catalog/thumb_big_0087jpg_1621348849.jpg"}
+            {"id": 0, "url": "https://exterium.com.ua/wa-data/public/shop/products/04/webp/49/99/9949/images/36711/36711.970.webp"},
+            {"id": 1, "url": "https://image-thumbs.shafastatic.net/364038396_310_430"},
+            {"id": 2, "url": "https://image-thumbs.shafastatic.net/393262882_310_430"},
+            {"id": 3, "url": "https://rebbeka.ru/content/catalog/thumb_big_0777jpg_1621331710.jpg"},
+            {"id": 4, "url": "https://rebbeka.ru/content/catalog/thumb_big_0087jpg_1621348849.jpg"}
          ],
          "price": 22000,
          "desc": "Шуба из эко-меха, оверсайз, плечи опущены, два кармана, английский воротник с отстрочкой, застёгивается на шубные кнопки",
