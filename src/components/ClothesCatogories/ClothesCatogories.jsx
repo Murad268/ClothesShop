@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect   } from 'react';
+import { useParams } from 'react-router-dom';
 import { useClothes } from '../../Context/ContextClothes';
 import CategoriFilterItem from '../CategoriFilterItem/CategoriFilterItem';
 import ClothesCatogoriesItem from '../ClothesCatogoriesItem/ClothesCatogoriesItem';
 
 import './clothesCatogories.scss'
 const ClothesCatogories = () => {
+   const {forIt} = useParams()
 
    const {
       states, 
@@ -15,6 +17,7 @@ const ClothesCatogories = () => {
       filterOptions, 
       filterForOptions, 
       filterFor, 
+      clickFilter,
       clickFilterFor, 
       filterColor, 
       filterColorOption, 
@@ -27,7 +30,9 @@ const ClothesCatogories = () => {
       changePriceFilter} = useClothes()
    
  
-  
+  useEffect(() => {
+   forIt?clickFilter(forIt):clickFilter("Все")
+  }, [])
    return (
       <div className='clothesCatogories'>
          <div className="container">

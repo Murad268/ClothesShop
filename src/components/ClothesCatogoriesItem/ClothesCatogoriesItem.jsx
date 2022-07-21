@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './clothesCatogoriesItem.scss'
 const ClothesCatogoriesItem = ({data}) => {
   
    return (
-      <div style={{"background": `url(${data.url}) center center/cover no-repeat`}} className='clothesCatogoriesItem'>
+      <Link to={`./${data.id}`} style={{"background": `url(${data.url}) center center/cover no-repeat`}} className='clothesCatogoriesItem'>
          <div className="clothesCatogoriesItem__footer">
             <div className="clothesCatogoriesItem__name">{data.name.toLowerCase()}</div>
             <div className="clothesCatogoriesItem__price">{data.price} грн</div>
@@ -23,7 +23,7 @@ const ClothesCatogoriesItem = ({data}) => {
                }
             </div>
          </div>
-      </div>
+      </Link>
    );
 };
 

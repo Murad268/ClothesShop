@@ -13,7 +13,7 @@ const MainMenuCategories = () => {
    const changeOffset = () => {
       if(sliderOptions.offset >= ((270 * states.length) + (15*states.length - 1))) {
          setSliderOptions(prev => ({...prev, offset: 0}))
-         console.log(sliderOptions.offset)
+     
       }
          setSliderOptions(prev => ({...prev, offset: prev.offset+285}))
    }

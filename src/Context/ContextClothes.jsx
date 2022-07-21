@@ -1,8 +1,7 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { useQuery } from '@tanstack/react-query';
 import { ClothesService } from '../services/Services';
-import { useState, useEffect } from "react";
  const ContextClothes = createContext()
 
 
@@ -55,6 +54,8 @@ import { useState, useEffect } from "react";
    const [filterColorOption, setFilterColorOption] = useState("all");
    const [filterSizeOption, setFilterSizeOption] = useState("all");
    const [filterPriceOption, setFilterPriceOption] = useState(0)
+ 
+
    const filteredItems = (filter, items) => {
       switch(filter) {
          case "Все":

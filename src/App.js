@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Categories from './pages/Categories';
+import ClothesPage from './pages/ClothesPage';
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/categories' element={<Categories/>}/>
+          <Route path='/:forIt' element={<Categories/>}/>
+          <Route path='/categories/:forClothes' element={<ClothesPage/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
