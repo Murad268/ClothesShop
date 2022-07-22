@@ -7,6 +7,7 @@ export const ClothesService =  {
    }
 }
 
+
 // export const getAllData = async() => {
 //    const res = await fetch('https://clothes-c5b10-default-rtdb.firebaseio.com/all.json', {
 //       method: "GET"

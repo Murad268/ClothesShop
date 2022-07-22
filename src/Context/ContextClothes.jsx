@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 import { useQuery } from '@tanstack/react-query';
 import { ClothesService } from '../services/Services';
+
  const ContextClothes = createContext()
 
 
@@ -54,7 +55,7 @@ import { ClothesService } from '../services/Services';
    const [filterColorOption, setFilterColorOption] = useState("all");
    const [filterSizeOption, setFilterSizeOption] = useState("all");
    const [filterPriceOption, setFilterPriceOption] = useState(0)
- 
+   const [addCartActive, setAddCartActive] = useState(false)
 
    const filteredItems = (filter, items) => {
       switch(filter) {
@@ -191,7 +192,9 @@ import { ClothesService } from '../services/Services';
       filterPriceOption,
       filterPrice,
       changePriceFilter,
-      toCat
+      toCat,
+      addCartActive,
+      setAddCartActive
    };
 
 

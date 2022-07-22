@@ -6,6 +6,7 @@ import CarouselPreview from '../CarouselPreview/CarouselPreview';
 import MainCarouselItem from '../MainCarouselItem/MainCarouselItem';
 import { useClothes } from '../../Context/ContextClothes';
 import MainMenuCategoriesItem from '../MainMenuCategoriesItem/MainMenuCategoriesItem';
+import axios from 'axios';
 import './oneItem.scss'
 const OneItem = () => {
    const random = Math.random()
@@ -13,24 +14,17 @@ const OneItem = () => {
    const {isLoading, data, error} = useQuery(["one clothes list"], () =>{
       return ClothesService.getAllData(`all/${forClothes}`)
    });
+   const {setAddCartActive} = useClothes()
    const [buyOption, setBuyOption] = useState({
       id: random,
-      name: "",
-      url: "",
+      name: data?.data.name,
+      url: data?.data.url,
       color: "",
       size: "",
       count: 1,
-      price: ""
+      price: data?.data.price,
+      sizes: data?.data.sizes
    })
-   useEffect(() => {
-      setBuyOption(prev => ({
-         ...prev,
-         name: data?.data.name,
-         url: data?.data.url,
-         price: data?.data.price
-
-      }))
-   }, [isLoading])
 
    const setColor = (data) => {
       setBuyOption(prev => ({...prev, color: data}))
@@ -47,13 +41,20 @@ const OneItem = () => {
    const addCart = () => {
      if(ifDisabled) {
       alert("Вы не выбрали цвет или размер")
-     } 
+     } else {
+      postToCart()
+      setAddCartActive(true)
+     }
    }
    const addFavorites = () => {
       if(ifDisabled) {
          alert("Вы не выбрали цвет или размер")
         } 
    }
+   const postToCart = () => {
+      axios.post("http://localhost:3005/cart", buyOption)
+   }
+  
    return (
       <div className='oneItem'>
          <div className="container">

@@ -5,11 +5,13 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Categories from './pages/Categories';
 import ClothesPage from './pages/ClothesPage';
+import Cart from './pages/Cart';
+import AddCartModal from './components/AddCartModal/AddCartModal';
 function App() {
   return (
     <div className="App">
-      
       <ContextClothesProvider>
+      <AddCartModal/>
       <BrowserRouter>
       <Header/>
         <Routes>
@@ -17,6 +19,7 @@ function App() {
           <Route path='/categories' element={<Categories/>}/>
           <Route path='/:forIt' element={<Categories/>}/>
           <Route path='/categories/:forClothes' element={<ClothesPage/>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
