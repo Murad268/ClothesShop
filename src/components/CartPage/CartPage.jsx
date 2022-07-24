@@ -1,15 +1,18 @@
 import React from 'react';
 import { CartService } from "../../services/CartService";
 import { useQuery } from '@tanstack/react-query';
+import { useClothes } from '../../Context/ContextClothes';
 import CartPageElement from '../CartPageElement/CartPageElement';
 import Checkout from '../Checkout/Checkout';
 import './cartPage.scss'
 const CartPage = () => {
+   const {discount} = useClothes()
    const {isLoading, data, error} = useQuery(["cart list"], () =>{
       return CartService.getCart()
    });
+ 
    const countAllPrice = () => {
-      return data?.data.reduce((a,b) => a+b.price, 0)
+      return data?.data.reduce((a,b) => +((a+b.price) * b.count), 0)
    }
   
    return (
@@ -25,7 +28,7 @@ const CartPage = () => {
               }
             </div>
             <div className="all__price">К оплате: <span>{countAllPrice()} грн</span></div>
-            <Checkout/>
+            <Checkout countAllPrice={countAllPrice}/>
          </div>
       </div>
    );

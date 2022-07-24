@@ -1,0 +1,18 @@
+.favorites {
+   padding: 40px 0 100px 0;
+   &__title {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+      color: #252525;
+   }
+   &__wrapper {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: (repeat(3, 270px));
+      justify-content: space-between;
+   }
+ 
+}

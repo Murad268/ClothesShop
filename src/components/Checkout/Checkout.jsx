@@ -1,6 +1,13 @@
 import React from 'react';
 import './checkout.scss'
-const Checkout = () => {
+import {Link} from 'react-router-dom'
+import { useClothes } from '../../Context/ContextClothes';
+const Checkout = ({countAllPrice}) => {
+   const {discount, setDiscount} = useClothes()
+   const discountPercent = discount==="135610865577833am"?70:discount==="Murad44444"?50:0
+   const priceWithDiscount = () => {
+      return countAllPrice() - discountPercent
+   }
    return (
       <div className='checkout'>
          <div className="checkout__title">Оформление заказа</div>
@@ -67,7 +74,7 @@ const Checkout = () => {
                      </div>
                      <div className="checkout__datas__bonus">
                         <div className="checkout__datas__bonus__title">Использование бонусного счёта:</div>
-                        <input type="text" placeholder='Сумма списания бонусов*'/>
+                        <input onChange={e => setDiscount(e.target.value)}  type="text" placeholder='Сумма списания бонусов*'/>
                      </div>
                </div>
                <div className="checkout__info">
@@ -79,7 +86,7 @@ const Checkout = () => {
                         <a href="">УСЛОВИЯ ДОСТАВКИ</a>
                      </li>
                      <li className="checkout__info__link">
-                        <a href="">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА</a>
+                        <Link to={"../exchangeandreturnpage"} href="">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА</Link>
                      </li>
                      <li className="checkout__info__link">
                         <a href="">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
@@ -87,8 +94,8 @@ const Checkout = () => {
                   </ul>
                   <div className="checkout__info__desc">
                      <div>ДОСТАВКА:   <span>   По тарифам перевозчика</span> </div>
-                     <div>БОНУСЫ:   <span>    -69 грн</span></div>
-                     <div>ИТОГО:   <span>   15250 грн</span></div>
+                     <div>БОНУСЫ:   <span>    -{countAllPrice()-priceWithDiscount()} грн</span></div>
+                     <div>ИТОГО:   <span>   {priceWithDiscount()} грн</span></div>
                   </div>
                   <button className='checkout__info__btn'>ОФОРМИТЬ ЗАКАЗ</button>
                   <div className="checkout__info__mm">

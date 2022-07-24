@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 import NavbarItem from '../NavbarItem/NavbarItem';
 import './navbar.scss'
 import logo from '../../assets/icons/logo.png'
@@ -42,8 +43,8 @@ const Navbar = () => {
                <div className="nav__userPanel">
                   <div className="search"><img src={search} alt="" /></div>
                   <div className="icon"><img src={user} alt="" /></div>
-                  <div className="hearth"><img src={hearth} alt="" /></div>
-                  <div className="basket"><img src={basket} alt="" /></div>
+                  <Link to={'/favorites'} className="hearth"><img src={hearth} alt="" /></Link>
+                  <Link to={'/cart'} className="basket"><img src={basket} alt="" /></Link>
                </div>
             </div>
            </div>

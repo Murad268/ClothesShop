@@ -1,0 +1,34 @@
+.exchangeandreturnpage {
+   padding: 40px 0 270px 0;
+   &__title {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+      color: #252525;
+   }
+   &__desc {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: #252525;
+      margin-top: 20px;
+   }
+   &__termTitle {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+      margin-top: 10px;
+   }
+   &__wrapper {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+   }
+}

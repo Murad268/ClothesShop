@@ -56,7 +56,15 @@ import { ClothesService } from '../services/Services';
    const [filterSizeOption, setFilterSizeOption] = useState("all");
    const [filterPriceOption, setFilterPriceOption] = useState(0)
    const [addCartActive, setAddCartActive] = useState(false)
-
+   const [discount, setDiscount] = useState("")
+   const [terms, setTerms] = useState([
+      {id: 0,  desc: "если заказ не был использован и сохранил товарный вид(в том числе не нарушены бирки, ярлыки, упаковочные материалы)"},
+      {id: 1,  desc: "возврат и обмен осуществляется в течение двух дней с момента получения заказа"},
+      {id: 2,  desc: "возврат и обмен товара возможен только при отправке по Украине"},
+      {id: 3,  desc: "бланк возврата присутствует в каждой посылке "},
+      {id: 4,  desc: "все расходы по обмену и возврату товара несет покупатель"},
+      {id: 5,  desc: "после получения возврата мы делаем перевод денежных средств на карту клиента"},
+   ])
    const filteredItems = (filter, items) => {
       switch(filter) {
          case "Все":
@@ -194,7 +202,10 @@ import { ClothesService } from '../services/Services';
       changePriceFilter,
       toCat,
       addCartActive,
-      setAddCartActive
+      setAddCartActive,
+      discount,
+      setDiscount,
+      terms
    };
 
 

@@ -17,15 +17,24 @@ const OneItem = () => {
    const {setAddCartActive} = useClothes()
    const [buyOption, setBuyOption] = useState({
       id: random,
-      name: data?.data.name,
-      url: data?.data.url,
       color: "",
       size: "",
-      count: 1,
-      price: data?.data.price,
-      sizes: data?.data.sizes
+      count: 1
    })
 
+   useEffect(() => {
+      setBuyOption(prev => ({
+         ...prev,
+         originaId: data?.data.id,
+         name: data?.data.name,
+         url: data?.data.url,
+         price: data?.data.price,
+         sizes: data?.data.sizes,
+         colors: data?.data.colors
+      }))
+   }, [data])
+
+   console.log(buyOption)
    const setColor = (data) => {
       setBuyOption(prev => ({...prev, color: data}))
    }
@@ -49,12 +58,14 @@ const OneItem = () => {
    const addFavorites = () => {
       if(ifDisabled) {
          alert("Вы не выбрали цвет или размер")
-        } 
+      } else {
+         axios.post("http://localhost:3007/favorites", buyOption)
+      }
    }
    const postToCart = () => {
       axios.post("http://localhost:3005/cart", buyOption)
    }
-  
+ 
    return (
       <div className='oneItem'>
          <div className="container">

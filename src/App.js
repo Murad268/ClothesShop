@@ -5,8 +5,10 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Categories from './pages/Categories';
 import ClothesPage from './pages/ClothesPage';
+import ExchangeAndReturnPage from './pages/ExchangeAndReturnPage';
 import Cart from './pages/Cart';
 import AddCartModal from './components/AddCartModal/AddCartModal';
+import FavoritesPage from './pages/FavoritesPage';
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,10 @@ function App() {
           <Route path='/categories' element={<Categories/>}/>
           <Route path='/:forIt' element={<Categories/>}/>
           <Route path='/categories/:forClothes' element={<ClothesPage/>}/>
+          <Route path='/:categories/:forClothes' element={<ClothesPage/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/exchangeandreturnpage' element={<ExchangeAndReturnPage/>}/>
+          <Route path='/favorites' element={<FavoritesPage/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

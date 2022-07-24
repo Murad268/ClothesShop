@@ -4,8 +4,26 @@ import deleter from '../../assets/icons/delete.png'
 import './cartPageElement.scss'
 const CartPageElement = ({element}) => {
    const deleteItem = (id) => {
-         axios.delete("http://localhost:3005/cart/" + id)   
+         axios.delete("http://localhost:3005/cart" + id)   
          window.location.reload();
+   }
+   const [count, setCount] = useState(element.count)
+   let elementCounter = element.count
+   const plusCount = (id) => {
+      elementCounter+=1
+      setCount(prev => prev + 1)
+      axios.patch("http://localhost:3005/cart/" + id, {
+         count: elementCounter,
+       })
+       window.location.reload();
+   }
+   const minusCount = (id) => {
+      elementCounter-=1
+      setCount(prev => prev - 1)
+      axios.patch("http://localhost:3005/cart/" + id, {
+         count: elementCounter,
+       })
+       window.location.reload();
    }
    return (
       <div className="cartPage__entrails__element">
@@ -27,9 +45,9 @@ const CartPageElement = ({element}) => {
          </div>
          <div className="cartPage__entrails__element__count">
             <div className="cartPage__entrails__element__count__body">
-               <span className="minus">-</span>
-               {element.count}
-               <span className="plus">+</span>
+               <span onClick={()=>minusCount(element.id)} className="minus">-</span>
+               {count}
+               <span onClick={()=>plusCount(element.id)} className="plus">+</span>
             </div>
          </div>
          <div className="cartPage__entrails__element__price">{element.price} грн</div>
